@@ -5,3 +5,4 @@ here we use
 2. for styling we have use Tailwild 
 3. packages for redux implementation  -> react-redux, reduxjs/toolkit
 #sanitpatil
+![alt text](image.png)
