@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { removeTodo, updateTodo } from '../Features/TodoSlice';
+import { removeTodo, updateTodo,updateSet} from '../Features/TodoSlice';
 function Todo() {
-    const [update,setUpdate] = useState(false)
-     const todos = useSelector(state=>state.todos);
+    
+    const todos = useSelector(state=>state.todos);
     const displatch = useDispatch();
     // // console.log(completed);
     // console.log(update);
@@ -12,32 +12,29 @@ function Todo() {
       
     },[todos])
   return (
-    <div className=' mx-32'>
-        <div className=' bg-black text-center text-white text-2xl rounded-lg '>
-           {
+    <div className=''>
+        <div className=' bg-black text-white text-2xl rounded-lg '>
+          {
+            
             todos.map((todo)=>(
-                <div key={todo.id}>
-                <h1  className='flex justify-around p-4  hover:bg-gray-900 rounded-2xl'>
-                  
-               {!update && <span>
-                <span className='px-12'>{todo.todo_msg}</span>
-               
-                <button type='submit' 
-                onClick={()=> {
-                  displatch(removeTodo(todo.id))
-                  setCompleted(false);
-                }}
-                className=' bg-orange-600 rounded-lg w-24 '>delete</button>{" "}
-                <button type='submit' 
-                onClick={()=>setUpdate((prev)=>!prev)}
-                className=' bg-orange-600 rounded-lg w-24' >update</button>
-                </span>
-               }
+              <div className='flex justify-between bg-gray-900 p-2 m-4 ' key={todo.id}>
+              <div  className=' p-2 pb-2'>
                 
-                </h1>
-                </div>
+              <h1 className='pl-20 text-2xl  text-center'>
+                {"  "}{todo.todo_msg}</h1>
+              </div>
+              <div className='pr-4'>
+                <button
+                onClick={()=>displatch(removeTodo(todo.id))}
+                className='bg-orange-700 p-2 rounded-lg hover:bg-blue-900' type='submit'>Delete</button>{"  "}
+                <button 
+                onClick={()=> displatch(updateSet({id:todo.id, msg:todo.todo_msg}))}
+                className='bg-orange-700 p-2 rounded-lg hover:bg-blue-900' type='submit'>Update</button>
+                
+              </div>
+              </div>
             ))
-           }
+          }
     </div>
     </div>
   )

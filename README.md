@@ -1,8 +1,8 @@
-# TODO -LIST WOTH REDUX REACT
-we just started working with react and some packages 
-here we use
-1. React -vite to create react page
-2. for styling we have use Tailwild 
-3. packages for redux implementation  -> react-redux, reduxjs/toolkit
-#sanitpatil
+# HELLO COLDRES, SANIT HERE
+# MINI PROJECT - TODO LIST MANAGER USING REACT-REDUX
+hello everyone, this project demonstrate how can we use Redux for state management
+in this project we have done simple CREATE, READ, UPDATE AND DELETE OPERATION 
+# this is ouput image of project 
 ![alt text](image.png)
+
+<sanit patil>
